@@ -1,0 +1,16 @@
+snappy_kernel=bubblegum96-kernel_0.snap
+kernel_file=vmlinuz
+loadkernel=fatload mmc 0:1 ${kernel_addr_r} ${snappy_kernel}/${kernel_file}
+
+fdtfile=s900_96board.dtb
+loadfdt=fatload mmc 0:1 ${fdt_addr_r} ${snappy_kernel}/dtbs/${fdtfile}
+
+initrd_file=initrd.img
+loadinitrd=fatload mmc 0:1 ${ramdisk_addr_r} ${snappy_kernel}/${initrd_file}; setenv initrd_size ${filesize}
+
+snappy_os=ubuntu-core_121.snap
+bootargs=console=ttyS5,115200n8 initcall_debug root=/dev/disk/by-label/writable init=/lib/systemd/systemd  ro panic=-1 fixrtc snappy_os=ubuntu-core_121.snap snappy_kernel=bubblegum96-kernel_0.snap rootwait
+bootsnappy=run loadkernel;run loadfdt;run loadinitrd;booti ${kernel_addr_r} ${ramdisk_addr_r}:${initrd_size} ${fdt_addr_r}
+
+bootcmd=run bootsnappy
+mboot=run bootsnappy

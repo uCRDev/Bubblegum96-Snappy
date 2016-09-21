@@ -1,0 +1,2 @@
+uboot.env is created from uboot.env.in via:
+$ mkenvimage -r -s 131072  -o uboot.env uboot.env.in

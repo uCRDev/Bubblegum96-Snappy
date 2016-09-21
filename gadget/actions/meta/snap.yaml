@@ -1,0 +1,31 @@
+name: bubblegum96-gadget
+summary: Bugglegum96baord support package
+description: |
+ Support files for booting the 96boards Bubblegum96board
+version: 0.1.0
+type: gadget
+architectures: [ arm64 ]
+
+immutable-config:
+    - ubuntu-core/autopilot*
+
+gadget:
+  branding:
+    name: Bubblegum96board
+    subname: Bubblegum96board
+
+
+  hardware:
+    platform: actions
+    architecture: arm64
+    partition-layout: minimal
+    bootloader: u-boot
+    boot-assets:
+      files:
+          - path: uboot.env
+          - path: uEnv.txt
+      raw-files:
+          - path: bootloader.bin
+            offset: 2097664
+          - path: u-boot.img
+            offset:  3145728

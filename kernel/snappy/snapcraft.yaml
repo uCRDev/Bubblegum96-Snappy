@@ -1,0 +1,22 @@
+name: bubblegum96-kernel
+version: 3.10.0
+summary: A bubblegum kernel built from source
+description: This is the kernel from https://github.com/96boards-bubblegum/linux
+type: kernel
+
+parts:
+  kernel:
+    plugin: kernel
+    source: ../linux
+    source-type: git
+    kdefconfig: [owl_evb_linux_hdmi_defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
+    kconfigs:
+      - CONFIG_LOCALVERSION="-bubblegum"
+      - CONFIG_DEBUG_INFO=n
+      - CONFIG_SQUASHFS=m
+    kernel-initrd-modules:
+      - squashfs
+    kernel-image-target: Image
+    kernel-device-trees:
+      - s900_96board
+    build-packages: [bc, kmod, cpio]
