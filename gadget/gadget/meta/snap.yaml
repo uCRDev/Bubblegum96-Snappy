@@ -1,0 +1,8 @@
+name: bubblegum96-gadget
+version: 16.04-1.1
+summary: Bubblegum96 board support package
+description: |
+ Support files for booting the Bubblegum96 board
+type: gadget
+architectures:
+    - arm64
