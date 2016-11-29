@@ -1,0 +1,11 @@
+{
+ "type": "model",
+ "authority-id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+ "brand-id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+ "series": "16",
+ "model": "bubblegum96",
+ "architecture": "arm64",
+ "gadget": "bubblegum96-gadget",
+ "kernel": "bubblegum96-kernel",
+ "timestamp": "2016-11-22T12:00:00+00:00"
+}
