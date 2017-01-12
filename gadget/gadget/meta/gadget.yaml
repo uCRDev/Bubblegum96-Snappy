@@ -1,18 +1,20 @@
 device-tree: s900-96board.dtb
 volumes:
-  lemaker-guitar:
+  bubblegum96:
     schema: mbr
     bootloader: u-boot
     structure:
       - name: Bootstrap
-        type: mbr 
-        size: 8M
+        type: bare
+        size: 6M
+        offset: 2M
         content:
           - image: bootloader.bin
-            offset: 2097664
+            offset: 512
           - image: u-boot.bin
-            offset: 3145728
-      - type: 0C
+            offset: 1048576
+      - name: system-boot
+        type: 0C
         filesystem: vfat
         filesystem-label: system-boot
         offset: 8388608

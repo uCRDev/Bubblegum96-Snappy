@@ -54,6 +54,7 @@ Example of model for Bubblegum96, ~/Bubblegum96-Snappy/image/TEMPLATE-model.json
  "timestamp": "2016-11-22T12:00:00+00:00"
 }
 ```
+Timestamp is not necessary to modify, you can also exec `$ date -Iseconds --utc`to obtain the current timestamp.<br />
 You can find your account id here:[https://myapps.developer.ubuntu.com/dev/account/](https://myapps.developer.ubuntu.com/dev/account/)
 
 ### Sign model:
