@@ -11,7 +11,7 @@ Notes:Bubblegum96 kernel can't be cross complied by gcc 5+ aarch64-linux-gnu, so
 
 ## Build gadget snap
 ```bash
-git clone https://github.com/uCRDev/Bubblegum96-Snappy
+git clone https://github.com/blimjoe/Bubblegum96-Snappy
 cd Bubblegum96-Snappy
 cd gadget
 snapcraft snap gadget
