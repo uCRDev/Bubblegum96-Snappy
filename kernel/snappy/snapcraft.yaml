@@ -1,7 +1,7 @@
 name: bubblegum96-kernel
-version: 3.10.0
+version: 3.10.99
 summary: A bubblegum kernel built from source
-description: This is the kernel from https://github.com/96boards-bubblegum/linux
+description: This is the kernel from https://github.com/uCRDev/linux
 type: kernel
 
 parts:
@@ -9,7 +9,7 @@ parts:
     plugin: kernel
     source: ../linux
     source-type: git
-    kdefconfig: [owl_evb_linux_hdmi_defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
+    kdefconfig: [bubblegum_linux_defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
     kconfigs:
       - CONFIG_LOCALVERSION="-bubblegum"
       - CONFIG_DEBUG_INFO=n

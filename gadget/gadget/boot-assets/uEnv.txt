@@ -8,8 +8,8 @@ loadfdt=fatload mmc 0:1 ${fdt_addr_r} ${snappy_kernel}/dtbs/${fdtfile}
 initrd_file=initrd.img
 loadinitrd=fatload mmc 0:1 ${ramdisk_addr_r} ${snappy_kernel}/${initrd_file}; setenv initrd_size ${filesize}
 
-snap_os=core_717.snap
-bootargs=console=ttyS5,115200n8 initcall_debug root=/dev/disk/by-label/writable init=/lib/systemd/systemd  ro panic=-1 fixrtc snap_core=core_717.snap snap_kernel=bubblegum96-kernel_x1.snap rootwait
+snap_os=core_2776.snap
+bootargs=console=ttyS5,115200n8 initcall_debug root=/dev/disk/by-label/writable init=/lib/systemd/systemd  ro panic=-1 fixrtc snap_core=core_2776.snap snap_kernel=bubblegum96-kernel_x1.snap rootwait
 bootsnappy=run loadkernel;run loadfdt;run loadinitrd;booti ${kernel_addr_r} ${ramdisk_addr_r}:${initrd_size} ${fdt_addr_r}
 
 bootcmd=run bootsnappy

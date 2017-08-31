@@ -11,17 +11,17 @@ Notes:Bubblegum96 kernel can't be cross complied by gcc 5+ aarch64-linux-gnu, so
 
 ## Build gadget snap
 ```bash
-git clone https://github.com/uCRDev/Bubblegum96-Snappy
+git clone https://github.com/blimjoe/Bubblegum96-Snappy
 cd Bubblegum96-Snappy
 cd gadget
 snapcraft snap gadget
 ```
-a gadget snap named bubblegum96-gadget_16.04-1.1_arm64.snap will be generated here
+a gadget snap named bubblegum96-gadget_16.04-1.2_arm64.snap will be generated here
 
 ## Build kernel snap
 ```bash
 cd ~/Bubblegum96-Snappy/kernel
-git clone https://github.com/96boards-bubblegum/linux
+git clone https://github.com/uCRDev/linux.git
 cd linux
 git checkout bubblegum96-3.10
 git am ../patchs/*
@@ -75,7 +75,7 @@ snap keys
 Sign model assertion:
 ```bash
 cd ~/Bubblegum96-Snappy/image
-cat bubblegum96-model.json | snap sign -k default &> bubblegum96.model
+cat bubblegum96-model.json | snap sign -k your_key &> bubblegum96.model
 ```
 
 ## Build bootable image
@@ -86,9 +86,9 @@ sudo snap install --stable --devmode ubuntu-image
 Build image
 ```bash
 cd ~/Bubblegum96-Snappy/image
-cp ../gadget/bubblegum96-gadget_16.04-1.1_arm64.snap .
-cp ../kernel/snappy/bubblegum96-kernel_3.10.0_arm64.snap .
-sudo /snap/bin/ubuntu-image --channel stable --image-size 2G --extra-snaps bubblegum96-gadget_16.04-1.1_arm64.snap --extra-snaps bubblegum96-kernel_3.10.0_arm64.snap -o bubblegum96.img bubblegum96.model
+cp ../gadget/bubblegum96-gadget_16.04-1.2_arm64.snap .
+cp ../kernel/snappy/bubblegum96-kernel_3.10.99_arm64.snap .
+sudo /snap/bin/ubuntu-image --channel stable --image-size 2G --extra-snaps bubblegum96-gadget_16.04-1.2_arm64.snap --extra-snaps bubblegum96-kernel_3.10.99_arm64.snap -o bubblegum96.img bubblegum96.model
 ```
 
 ## Burn image to SD card
